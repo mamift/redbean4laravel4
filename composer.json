@@ -18,7 +18,7 @@
             "src/Mamift/Redbean4Laravel4/rb.php"
         ],
         "psr-4": {
-            "Mamift\\Redbean4Laravel4": "src/"
+            "Mamift\\Redbean4Laravel4\\": "src/"
         }
     },
     "minimum-stability": "dev"

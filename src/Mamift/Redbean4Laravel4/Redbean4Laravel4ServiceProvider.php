@@ -1,4 +1,6 @@
-<?php namespace Mamift\Redbean4Laravel4;
+<?php 
+
+namespace Mamift\Redbean4Laravel4;
 
 // include 'rb.php';
 
