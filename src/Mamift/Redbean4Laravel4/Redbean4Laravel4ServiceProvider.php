@@ -36,20 +36,23 @@ class Redbean4Laravel4ServiceProvider extends ServiceProvider {
 		//Get DB configs from app/config/database.php
 		$default = Laravel\Config::get('database.default');
 		$connections = Laravel\Config::get('database.connections');
-		$db_host = $connections[$default]['host'];
-		$db_user = $connections[$default]['username']; 
-		$db_pass = $connections[$default]['password'];
+
 		$db_name = $connections[$default]['database'];
 		$db_driver = $connections[$default]['driver'];
 
 		//Run the R::setup command based on db_type
 		if ($default != 'sqlite') {
+			$db_host = $connections[$default]['host'];
+			$db_user = $connections[$default]['username']; 
+			$db_pass = $connections[$default]['password'];
 			$conn_string = $db_driver.':host='.$db_host.';dbname='.$db_name;
+
+			\R::setup($conn_string, $db_user, $db_pass);
 		} else {
 			$conn_string = $db_driver.':'.$db_name;
-		}
 
-		\R::setup($conn_string, $db_user, $db_pass);
+			\R::setup($conn_string);
+		}
 	}
 
 	/**
