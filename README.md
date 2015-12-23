@@ -1,7 +1,14 @@
 # redbean4laravel4
 ### A Laravel 4 package for RedBeanPHP ORM 4.1
 
-This is a Laravel 4 package to allow the use of [Redbean PHP ORM](http://redbeanphp.com), version 4.1.
+This is a Laravel 4 package to allow the use of [Redbean PHP ORM](http://redbeanphp.com), version 4.1. This version of Redbean supports PHP 5.3.4 and later, and has been tested to work with Laravel 4.1.
+
+#### Important 
+If you are using Laravel 4.1 and running PHP 5.3.3 or older, you must run the 5.3.3 patch script on the rb.php file under the vendor\mamift\redbean4-laravel4\src\Mamift\Redbean4Laravel4 directory. 
+Please visit this link for more information.
+[Patch for PHP 5.3.3 and earlier](http://www.redbeanphp.com/index.php?p=/install#p533patch)
+
+THIS MUST BE RUN EVERYTIME YOU RUN composer update AND A NEW VERSION OF THIS PROVIEDER HAS BEEN PUBLISHED.
 
 ### How to install
 
@@ -39,9 +46,9 @@ In the above example where the following line is:
 
 RedBean will create a separate table, 'gender', and include an appropriate primary key (an **AUTO_INCREMENTING 'ID'** column when you're using MySQL). Whenever you use **R::enum()** again, (like **R::enum('gender:female')** for instance), then RedBean will add another 'female' record inside the 'gender' table. 
 
-Note how it doesn't use the built-in [ENUM] data type as a column type; this enables you to define another bean (table) which can use the same set of values.
+Note how it doesn't use the built-in [ENUM] data type as a column type; this enables you to define another bean (which will use the same table) that can use the same set of values.
 
-RedBean will also determine the appropriate data type depending on the values of the properties of your beans. In the above example, **$user['description']** is stored as TEXT and **$user->username** is stored as VARCHAR(255).
+RedBean will also determine the appropriate data type depending on the values of the properties of your beans. In the above example, (if you're using MySQL at least) **$user['description']** is stored as TEXT and **$user->username** is stored as VARCHAR(255) .
 
 When reverting a Laravel migration, you may need to also use Schema builder methods such as **Schema::drop('user')** or **Schema::drop('gender')**, as RedBean does not provide a way to delete the table schema. Instead it allows you to erase all instances of a bean (equivalent to deleting all rows inside a table) using **R::wipe('user')**. 
 
@@ -63,5 +70,3 @@ What this package does is load rb.php for each request. Under the "autoload" JSO
 	
 A quote from the [Composer documentation](https://getcomposer.org/doc/04-schema.md#files) says:
 >If you want to require certain files explicitly on every request then you can use the 'files' autoloading mechanism. This is useful if your package includes PHP functions that cannot be autoloaded by PHP.
-
-Due to rb.php being loaded on each request, there may be a slight performance penalty incurred.
