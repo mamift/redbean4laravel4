@@ -8,7 +8,7 @@ If you are using Laravel 4.1 and running PHP 5.3.3 or older, you must run the 5.
 Please visit this link for more information.
 [Patch for PHP 5.3.3 and earlier](http://www.redbeanphp.com/index.php?p=/install#p533patch)
 
-THIS MUST BE RUN EVERYTIME YOU RUN composer update AND A NEW VERSION OF THIS PROVIEDER HAS BEEN PUBLISHED.
+THIS MUST BE RUN EVERYTIME YOU RUN composer update AND A NEW VERSION OF THIS PROVIDER HAS BEEN PUBLISHED.
 
 ### How to install
 
