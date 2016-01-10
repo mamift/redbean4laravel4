@@ -1,14 +1,10 @@
 # redbean4laravel4
-### A Laravel 4 package for RedBeanPHP ORM 4.1
+### A Laravel 4 package for RedBeanPHP ORM 4.3.1
 
-This is a Laravel 4 package to allow the use of [Redbean PHP ORM](http://redbeanphp.com), version 4.1. This version of Redbean supports PHP 5.3.4 and later, and has been tested to work with Laravel 4.1.
+This is a Laravel 4 package to allow the use of [Redbean PHP ORM](http://redbeanphp.com), version 4.3.1. This version of Redbean supports PHP 5.3.4 and later, and has been tested to work with Laravel 4.1.
 
-#### Important 
-If you are using Laravel 4.1 and running PHP 5.3.3 or older, you must run the 5.3.3 patch script on the rb.php file under the vendor\mamift\redbean4-laravel4\src\Mamift\Redbean4Laravel4 directory. 
-Please visit this link for more information.
-[Patch for PHP 5.3.3 and earlier](http://www.redbeanphp.com/index.php?p=/install#p533patch)
-
-THIS MUST BE RUN EVERYTIME YOU RUN composer update AND A NEW VERSION OF THIS PROVIDER HAS BEEN PUBLISHED.
+#### PHP 5.3.3 compatibility note
+If you are using Laravel 4.3.1 and running PHP 5.3.3 or older, you must use the dev-php533 branch of this package.
 
 ### How to install
 
