@@ -8,7 +8,7 @@ If you are using Laravel 4.1 and running PHP 5.3.3 or older, you must use the *p
 
 #### Laravel 4 and PHP 5.3.3 compatibility
 
-Note that only Laravel 4.1 is compatible with PHP 5.3.3 (Laravel 4.2 uses language constructs that are not available in PHP 5.3.3). Even then, you must switch out the default HashingProvider and use one that is PHP 5.3.3 compatible; here is one that can be used and has been tested with this package: https://github.com/robclancy/laravel4-hashing
+Note that only Laravel 4.1 is the most recent version that is partially compatible with PHP 5.3.3 (Laravel 4.2 uses language constructs that are not available in PHP 5.3.3). Even then, you must switch out the default HashingProvider and use one that is PHP 5.3.3 compatible; here is one that can be used and has been tested with this package: https://github.com/robclancy/laravel4-hashing
 
 ### How to install
 
@@ -23,6 +23,12 @@ to your composer.json file. Then add this line:
 to your Laravel service provider's array in app.php inside the config/ folder, so RedBeanPHP is setup using Laravel's database settings (inside database.php).
 
 Because RedBeanPHP also includes it's own facade class ("R"), there is no need to add anything into the alias array.
+
+### Troubleshooting
+
+This packages uses PSR-4 autoloading; if you are using Laravel 4.1, chances are in your composer.json you are only using classmap loading. When running *composer dump* (or composer *dump-autoload*), you may notice that you receive errors pertaining to 'Mamift\Redbean4Laravel4\Redbean4Laravel4ServiceProvider' no longer being found. 
+
+This error message can be resolved by running *php artisan optimize*. This shouldn't be required for Laravel 4.2.
 
 ### Usage
 
