@@ -15,11 +15,9 @@
     },
     "autoload": {
         "files": [
-            "src/Mamift/Redbean4Laravel4/rb.php"
-        ],
-        "psr-4": {
-            "Mamift\\Redbean4Laravel4\\": "src/"
-        }
+            "src/Mamift/Redbean4Laravel4/rb.php",
+            "src/Mamift/Redbean4Laravel4/Redbean4Laravel4ServiceProvider.php"
+        ]
     },
     "minimum-stability": "dev"
 }
