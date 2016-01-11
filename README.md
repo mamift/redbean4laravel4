@@ -1,10 +1,14 @@
 # redbean4laravel4
-### A Laravel 4 package for RedBeanPHP ORM 4.3.1
+### A Laravel 4 package for RedBeanPHP ORM 4.1
 
-This is a Laravel 4 package to allow the use of [Redbean PHP ORM](http://redbeanphp.com), version 4.3.1. This version of Redbean supports PHP 5.3.4 and later, and has been tested to work with Laravel 4.1.
+This is a Laravel 4 package to allow the use of [Redbean PHP ORM](http://redbeanphp.com), version 4.1. This version of Redbean supports PHP 5.3.4 and later, and has been tested to work with Laravel 4.1.
 
-#### PHP 5.3.3 compatibility note
-If you are using Laravel 4.3.1 and running PHP 5.3.3 or older, you must use the dev-php533 branch of this package.
+### PHP 5.3.3 compatibility note
+If you are using Laravel 4.1 and running PHP 5.3.3 or older, you must use the dev-php533 branch of this package.
+
+#### Laravel 4 and PHP 5.3.3 compatibility
+
+Note that only Laravel 4.1 is compatible with PHP 5.3.3 (Laravel 4.2 uses language constructs that are not available in PHP 5.3.3). Even then, you must switch out the default HashingProvider and use one that is PHP 5.3.3 compatible; here is one that can be used and has been tested with this package: https://github.com/robclancy/laravel4-hashing
 
 ### How to install
 
