@@ -1,7 +1,7 @@
 # redbean4laravel4
-### A Laravel 4 package for RedBeanPHP ORM 4.1
+### A Laravel 4 package for RedBeanPHP ORM 4.3.1
 
-This is a Laravel 4 package to allow the use of [Redbean PHP ORM](http://redbeanphp.com), version 4.1. This version of Redbean supports PHP 5.3.4 and later, and has been tested to work with Laravel 4.1.
+This is a Laravel 4 package to allow the use of [Redbean PHP ORM](http://redbeanphp.com), version 4.3.1. This version of Redbean supports PHP 5.3.4 and later, and has been tested to work with Laravel 4.1+
 
 ### PHP 5.3.3 compatibility note
 If you are using Laravel 4.1 and running PHP 5.3.3 or older, you must use the *php533* branch of this package (use as dev-php533 in your composer.json file).
