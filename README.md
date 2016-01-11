@@ -26,9 +26,11 @@ Because RedBeanPHP also includes it's own facade class ("R"), there is no need t
 
 ### Troubleshooting
 
-This packages uses PSR-4 autoloading; if you are using Laravel 4.1, chances are in your composer.json you are only using classmap loading. When running *composer dump* (or composer *dump-autoload*), you may notice that you receive errors pertaining to 'Mamift\Redbean4Laravel4\Redbean4Laravel4ServiceProvider' no longer being found. 
+This packages uses PSR-4 autoloading; if you are using Laravel 4.1, chances are in your composer.json you are only using classmap loading. When running *composer dump* (or composer *dump-autoload*) or updating to a new revision, you may notice that you receive errors pertaining to 'Mamift\Redbean4Laravel4\Redbean4Laravel4ServiceProvider' no longer being found:
+    
+    {"error":{"type":"Symfony\\Component\\Debug\\Exception\\FatalErrorException","message":"Class 'Mamift\\Redbean4Laravel4\\Redbean4Laravel4ServiceProvider' not found","file":"C:\\Users\\mmiftah\\Sites\\bpanz.com-sc\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php","line":158}}
 
-This error message can be resolved by running *php artisan optimize*. This shouldn't be required for Laravel 4.2.
+This error message can be resolved by temporarily commenting out or removing 'Mamift\Redbean4Laravel4\Redbean4Laravel4ServiceProvider' inside your app.php (under the config directory) and then running *php artisan optimize*; then uncomment 'Mamift\Redbean4Laravel4\Redbean4Laravel4ServiceProvider' or re-add it to your app.php and it should work.
 
 ### Usage
 
