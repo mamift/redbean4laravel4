@@ -47,19 +47,13 @@ class Redbean4Laravel4ServiceProvider extends ServiceProvider {
 			$db_pass = $connections[$default]['password'];
 			$conn_string = $db_driver.':host='.$db_host.';dbname='.$db_name;
 
-			try {
-				\R::setup($conn_string, $db_user, $db_pass);
-			} catch (\RedbeanPHP\RedException Exception $e) {
-				return;
-			}			
+			if (\R::testConnection()) return;
+			\R::setup($conn_string, $db_user, $db_pass);
 		} else {
 			$conn_string = $db_driver.':'.$db_name;
             
-            try {
-				\R::setup($conn_string);
-            } catch (\RedbeanPHP\RedException Exception $e) {
-            	return;
-            }            
+			if (\R::testConnection()) return;
+			\R::setup($conn_string);
 		}
 	}
 
